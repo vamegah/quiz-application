@@ -17,6 +17,10 @@ const quizSlice = createSlice({
           state.score += 1;
         }
         state.currentQuestionIndex += 1;
+      },
+      resetQuiz: (state) => {
+        state.currentQuestionIndex = 0;
+        state.score = 0;
       }
 
   },

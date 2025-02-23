@@ -12,12 +12,16 @@ const Quiz = () => {
     const handleAnswer = (answer) => {
         dispatch(answerQuestion(answer));
     };
+    const handleReset = () => {
+        dispatch(resetQuiz());
+      };
 
     if (currentQuestionIndex >= questions.length) {
         return (
           <View style={styles.container}>
             <Text style={styles.title}>Quiz Completed!</Text>
             <Text style={styles.scoreText}>Your Score: {score}/{questions.length}</Text>
+            <Button title="Restart Quiz" onPress={handleReset} />
           </View>
         );
       }
